@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage NavigationPage.HasBackButton="False" xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" xmlns:sfPopup="clr-namespace:Syncfusion.XForms.PopupLayout;assembly=Syncfusion.SfPopupLayout.XForms" xmlns:gradient ="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="youth.Shop" Title="" IconImageSource="shop@2x.png">
+ 
+        <ContentPage.Content>
+           <Grid>
+                <gradient:SfGradientView>
+        <gradient:SfGradientView.BackgroundBrush>           
+            <gradient:SfLinearGradientBrush>                
+                <gradient:SfLinearGradientBrush.GradientStops>
+                    <gradient:SfGradientStop x:Name="TopGradient" Color="#0048b9" Offset="0.0" />
+                    <gradient:SfGradientStop x:Name="BotGradient" Color="#00a8e8" Offset="1.0" />
+
+                </gradient:SfLinearGradientBrush.GradientStops>                
+            </gradient:SfLinearGradientBrush>            
+        </gradient:SfGradientView.BackgroundBrush>
+    </gradient:SfGradientView>
+               <ScrollView>
+                   
+               <StackLayout>
+                   <ScrollView>
+
+                   </ScrollView>
+                    <Label x:Name="Pointslbl" Padding="10,20,0,0" Text="Points:" FontAttributes="Bold" FontSize="30" TextColor="White"></Label>
+                     <Label Padding="10,20,0,0" Text="Special Offers" FontAttributes="Bold" FontSize="30" TextColor="White"></Label>
+
+              <StackLayout Padding="5" HeightRequest="200" WidthRequest="200" Orientation="Horizontal" >
+                  
+                  <syncfusion:SfListView x:Name="featureLV" ItemDoubleTapped="shopLV_ItemDoubleTapped" ItemSize="200"  BackgroundColor="White" SelectionGesture="DoubleTap" ItemSpacing="1" Padding="1" Orientation="Horizontal" SelectionMode="Single" >
+                      <syncfusion:SfListView.LayoutManager>
+                        <syncfusion:GridLayout SpanCount="1"></syncfusion:GridLayout>
+                        </syncfusion:SfListView.LayoutManager>
+                <syncfusion:SfListView.ItemTemplate>
+                    <DataTemplate>
+                            <StackLayout>
+                            
+                                          <Image Source="{Binding Image}" />
+                                <Label TextColor="Black" Grid.Row="1" Text="{Binding Name}" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                                <Label TextColor="Black" Grid.Row="1" Text="{Binding Description}" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                                <Label TextColor="Goldenrod" Grid.Row="1" Text="{Binding Points, StringFormat='{0} Points'}" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                             
+                            </StackLayout>
+
+                                
+                               
+                            
+                    </DataTemplate>
+                </syncfusion:SfListView.ItemTemplate>
+            </syncfusion:SfListView>
+               
+         <sfPopup:SfPopupLayout x:Name="popUpLayout" BindingContext="{Binding .}">
+    <sfPopup:SfPopupLayout.PopupView>
+
+        <sfPopup:PopupView HeightRequest="430"
+                          
+                           ShowFooter="False"
+                           ShowCloseButton="True"
+                           AnimationMode="SlideOnBottom"
+                           
+                           
+                           
+                           
+                           >
+            <sfPopup:PopupView.PopupStyle>
+                <sfPopup:PopupStyle CornerRadius="5"></sfPopup:PopupStyle>
+            </sfPopup:PopupView.PopupStyle>
+            <sfPopup:PopupView.HeaderTemplate>
+                <DataTemplate>
+                    <Label Text="Confirmation of Purchase" FontAttributes="Bold" HorizontalTextAlignment="Center" FontSize="20" VerticalTextAlignment="Center">
+                        
+                    </Label>
+                </DataTemplate>
+            </sfPopup:PopupView.HeaderTemplate>
+            
+            <sfPopup:PopupView.ContentTemplate>
+
+                <DataTemplate>
+                    <Grid>
+                        <gradient:SfGradientView>
+        <gradient:SfGradientView.BackgroundBrush>           
+            <gradient:SfLinearGradientBrush>                
+                <gradient:SfLinearGradientBrush.GradientStops>
+                    <gradient:SfGradientStop x:Name="TopGradient" Color="#0048b9" Offset="0.0" />
+                    <gradient:SfGradientStop x:Name="BotGradient" Color="#00a8e8" Offset="1.0" />
+
+                </gradient:SfLinearGradientBrush.GradientStops>                
+            </gradient:SfLinearGradientBrush>            
+        </gradient:SfGradientView.BackgroundBrush>
+    </gradient:SfGradientView>
+                        <StackLayout>
+                        
+                        <Label Text="Would you like to purchase:"
+                           WidthRequest="260"
+                               FontSize="20"
+                           FontAttributes="Bold"
+                               TextColor="White"
+                           HorizontalOptions="FillAndExpand"
+                               HorizontalTextAlignment="Center"
+                           />
+                         <Image x:Name="PImage" Source="{Binding Image}" ></Image>
+                         <Label x:Name="PTitle" FontAttributes="Bold" TextColor="White" HorizontalTextAlignment="Center" FontSize="15"  Text="{Binding Name}"></Label>
+                         <Label x:Name="PDesc" FontAttributes="Bold" TextColor="White" HorizontalTextAlignment="Center" FontSize="15" Text="{Binding Description}"></Label>
+                             <buttons:SfButton BackgroundColor="Green" Text="Accept"  Margin="0,0,10,0" Clicked="SfButton_Clicked" CornerRadius="10" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="20" WidthRequest="100" HeightRequest="50" FontAttributes="Bold"/>
+                            <buttons:SfButton BackgroundColor="Red" Text="Close"  Margin="0,0,10,0" Clicked="SfButton_Clicked_1" CornerRadius="10" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="20" WidthRequest="100" HeightRequest="50" FontAttributes="Bold"/>
+                    </StackLayout>
+                    </Grid>
+                    
+                    
+                    
+                </DataTemplate>
+            </sfPopup:PopupView.ContentTemplate>
+        </sfPopup:PopupView>
+    </sfPopup:SfPopupLayout.PopupView>
+             </sfPopup:SfPopupLayout>
+                  
+                  
+           
+                 
+       
+                 
+    </StackLayout>
+                 
+                   <Label Text="All Items" Padding="10,20,0,0" FontAttributes="Bold" FontSize="30" TextColor="White"></Label>
+                   <StackLayout Padding="5">
+                       <syncfusion:SfListView x:Name="shopLV" ItemDoubleTapped="shopLV_ItemDoubleTapped" ItemSize="200" BackgroundColor="White" ItemSpacing="1" Padding="10" Orientation="Vertical"  SelectionMode="Single">
+                    <syncfusion:SfListView.LayoutManager>
+                        <syncfusion:LinearLayout></syncfusion:LinearLayout>
+                        </syncfusion:SfListView.LayoutManager>
+                <syncfusion:SfListView.ItemTemplate>
+                    <DataTemplate>
+                            <StackLayout>
+
+                                 <Image Source="{Binding Image}" />
+                                <Label TextColor="Black" Grid.Row="1" Text="{Binding Name}" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                                <Label TextColor="Black" Grid.Row="1" Text="{Binding Description}" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                                <Label TextColor="Goldenrod" Grid.Row="1" Text="{Binding Points, StringFormat='{0} Points'}" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                            </StackLayout>
+
+                                
+                               
+                            
+                    </DataTemplate>
+                </syncfusion:SfListView.ItemTemplate>
+            </syncfusion:SfListView>
+           </StackLayout>
+                   </StackLayout>
+        
+                
+               </ScrollView>
+               
+            
+           </Grid>
+          
+                
+           
+
+           
+          
+                
+                  
+               
+               
+           
+             
+                
+        </ContentPage.Content>
+        
+        
+</ContentPage>

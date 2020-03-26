@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage NavigationPage.HasBackButton="False" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:gradient ="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms"
+             xmlns:ListCollection="clr-namespace:System.Collections.Generic;assembly=netstandard"
+             x:Class="youth.Food" Title="" IconImageSource="food@2x.png">
+        <ContentPage.Content>
+            <Grid>
+                <gradient:SfGradientView>
+        <gradient:SfGradientView.BackgroundBrush>           
+            <gradient:SfLinearGradientBrush>                
+                <gradient:SfLinearGradientBrush.GradientStops>
+                    <gradient:SfGradientStop x:Name="TopGradient" Color="#0048b9" Offset="0.0" />
+                    <gradient:SfGradientStop x:Name="BotGradient" Color="#00a8e8" Offset="1.0" />
+
+                </gradient:SfLinearGradientBrush.GradientStops>                
+            </gradient:SfLinearGradientBrush>            
+        </gradient:SfGradientView.BackgroundBrush>
+    </gradient:SfGradientView>
+                   <StackLayout 
+        VerticalOptions="Start" 
+        HorizontalOptions="Start"
+        Padding="30">
+        <autocomplete:SfAutoComplete x:Name="foodLC"
+                                     HeightRequest="40"
+                                     SelectionChanged="foodLC_SelectionChanged"
+                                     DisplayMemberPath="Name"
+                                     TextColor="Black"
+                                     NoResultsFoundText="Food Not Found!"
+                                     BackgroundColor="White">
+            <autocomplete:SfAutoComplete.AutoCompleteSource>
+               
+            </autocomplete:SfAutoComplete.AutoCompleteSource>
+        </autocomplete:SfAutoComplete>
+               <ListView x:Name="foodLV" SeparatorVisibility="None" BackgroundColor="Transparent" HasUnevenRows="True" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem  CommandParameter="{Binding .}" Text="Delete" IsDestructive="True"></MenuItem>
+                            </ViewCell.ContextActions>
+                            <StackLayout>
+                                <Frame BackgroundColor="{Binding Color}" CornerRadius="10" HasShadow="False" Padding="20,0,20,0" Margin="20,5,20,5" HeightRequest="90" >
+                                
+                                <StackLayout Orientation="Horizontal">
+                                
+
+                             
+                                     <Image Source="{Binding Image}" HeightRequest="50" WidthRequest="50"></Image>
+       
+                                
+                                  <Label Text="{Binding Name}"  TextColor="White" FontSize="30" FontAttributes="Bold" ></Label>
+                                   
+                                    
+
+                                  
+                                </StackLayout>
+                                
+                            </Frame>
+                                  <Frame CornerRadius="0" HasShadow="False" BackgroundColor="Transparent">
+                                        <Label Text="{Binding Calories, StringFormat='{0}, Calories'}" Margin="0,-10,0,0" TextColor="White" FontSize="20" FontAttributes="Bold" ></Label>
+                                    </Frame>
+                               
+                            </StackLayout>
+                            
+                            
+                          
+                        </ViewCell>
+                       
+                        
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+    </StackLayout>
+            </Grid>
+        
+        </ContentPage.Content>
+        <!-- Place new controls here -->
+
+</ContentPage>

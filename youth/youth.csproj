@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.5.0.396" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.1" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
+    <PackageReference Include="WindowsAzure.MobileServices.SQLiteStore" Version="1.0.4" />
+    <PackageReference Include="Xam.Plugin.Connectivity" Version="3.2.0" />
+    <PackageReference Include="Xamarin.Forms.Maps" Version="4.5.0.396" />
+    <PackageReference Include="Xam.Plugin.Geolocator" Version="4.5.0.6" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="17.4.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="17.4.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.SfRadialMenu" Version="17.4.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.SfAutoComplete" Version="17.4.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.SfPopupLayout" Version="17.4.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.SfChart" Version="17.4.0.55" />
+    <PackageReference Include="Microsoft.AppCenter.Data" Version="2.6.2" />
+    <PackageReference Include="Microsoft.AppCenter.Auth" Version="2.6.2" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="2.6.2" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="2.6.2" />
+    <PackageReference Include="Microsoft.AppCenter" Version="2.6.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Shop.cs" />
+    <Compile Remove="Data\UserDatabase.cs" />
+    <Compile Remove="Models\User.cs" />
+    <Compile Remove="Data\NoteDatabase.cs" />
+    <Compile Remove="MainPage1.xaml.cs" />
+    <Compile Remove="App.cs" />
+    <Compile Remove="App1.xaml.cs" />
+    <Compile Remove="Services\ApiServices.cs" />
+    <Compile Remove="ViewModels\BaseViewModel.cs" />
+    <Compile Remove="ViewModels\MainViewModel.cs" />
+    <Compile Remove="ViewModels\ActViewModel.cs" />
+    <Compile Remove="ViewModels\YouthVM.cs" />
+    <Compile Remove="Model\DataModel.cs" />
+    <Compile Remove="Helpers\AppDataHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="MainPage1.xaml" />
+    <EmbeddedResource Remove="View\MyPage.xaml" />
+    <EmbeddedResource Remove="Profile.xaml" />
+    <EmbeddedResource Remove="MyGraphs.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="app.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="View\" />
+    <Folder Include="Model\" />
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+</Project>

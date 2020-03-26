@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage NavigationPage.HasBackButton="False" xmlns:gradient ="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms" xmlns:sfPopup="clr-namespace:Syncfusion.XForms.PopupLayout;assembly=Syncfusion.SfPopupLayout.XForms" xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="youth.Activity" Title="" IconImageSource="activity@2x.png">
+        <ContentPage.Content>
+          
+            <sfPopup:SfPopupLayout x:Name="popUpLayout">
+    <sfPopup:SfPopupLayout.PopupView>
+
+        <sfPopup:PopupView HeightRequest="430"
+                          
+                           ShowFooter="False"
+                           ShowCloseButton="True"
+                           AnimationMode="SlideOnBottom"
+                           
+                           
+                           
+                           >
+            <sfPopup:PopupView.PopupStyle>
+                <sfPopup:PopupStyle CornerRadius="5"></sfPopup:PopupStyle>
+            </sfPopup:PopupView.PopupStyle>
+            <sfPopup:PopupView.HeaderTemplate>
+                <DataTemplate>
+                    <Label Text="Start Live Activity" FontAttributes="Bold" HorizontalTextAlignment="Center" FontSize="20" VerticalTextAlignment="Center">
+                        
+                    </Label>
+                </DataTemplate>
+            </sfPopup:PopupView.HeaderTemplate>
+            
+            <sfPopup:PopupView.ContentTemplate>
+
+                <DataTemplate>
+                    <Grid>
+                        <gradient:SfGradientView>
+        <gradient:SfGradientView.BackgroundBrush>           
+            <gradient:SfLinearGradientBrush>                
+                <gradient:SfLinearGradientBrush.GradientStops>
+                    <gradient:SfGradientStop x:Name="TopGradient" Color="#0048b9" Offset="0.0" />
+                    <gradient:SfGradientStop x:Name="BotGradient" Color="#00a8e8" Offset="1.0" />
+
+                </gradient:SfLinearGradientBrush.GradientStops>                
+            </gradient:SfLinearGradientBrush>            
+        </gradient:SfGradientView.BackgroundBrush>
+    </gradient:SfGradientView>
+                        <StackLayout>
+                        
+                        <Label Text="Which activity would you like to start?"
+                           WidthRequest="260"
+                               FontSize="20"
+                           FontAttributes="Bold"
+                               TextColor="White"
+                           HorizontalOptions="FillAndExpand"
+                               HorizontalTextAlignment="Center"
+                           />
+                         <ImageButton x:Name="run" Clicked="NewRun" Source="run.png" BorderColor="white" BorderWidth="1" WidthRequest="90" HeightRequest="90" HorizontalOptions="Center" VerticalOptions="Center"></ImageButton>
+                  <ImageButton x:Name="walk" Clicked="NewWalk" Source="walk.png" BorderColor="white" BorderWidth="1" WidthRequest="90" HeightRequest="90" HorizontalOptions="Center" VerticalOptions="Center"></ImageButton>
+                  <ImageButton x:Name="cycle" Clicked="NewCycle" Source="cycle.png" BorderColor="white" BorderWidth="1" WidthRequest="90" HeightRequest="90" HorizontalOptions="Center" VerticalOptions="Center"></ImageButton>
+                    </StackLayout>
+                    </Grid>
+                    
+                    
+                    
+                </DataTemplate>
+            </sfPopup:PopupView.ContentTemplate>
+        </sfPopup:PopupView>
+    </sfPopup:SfPopupLayout.PopupView>
+    <sfPopup:SfPopupLayout.Content>
+        <Grid x:Name="mainLayout">
+           
+           <maps:Map x:Name="map" IsShowingUser="True" MapType="Street"></maps:Map>
+             
+              <buttons:SfButton BackgroundColor="#0048b9" Text="+" x:Name="registerButton" Clicked="NewLiveActivity" CornerRadius="60" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="50" WidthRequest="55" HeightRequest="50" Padding="0,0,0,5" FontAttributes="Bold"  Margin="0,600,0,10"/>
+            <StackLayout x:Name="ProgressBox" BackgroundColor="White" WidthRequest="100" HeightRequest="50" Margin="30,30,30,500" IsVisible="False">
+                <Grid>
+                    <gradient:SfGradientView>
+        <gradient:SfGradientView.BackgroundBrush>           
+            <gradient:SfLinearGradientBrush>                
+                <gradient:SfLinearGradientBrush.GradientStops>
+                    <gradient:SfGradientStop x:Name="TopGradient" Color="#0048b9" Offset="0.0" />
+                    <gradient:SfGradientStop x:Name="BotGradient" Color="#00a8e8" Offset="1.0" />
+
+                </gradient:SfLinearGradientBrush.GradientStops>                
+            </gradient:SfLinearGradientBrush>            
+        </gradient:SfGradientView.BackgroundBrush>
+    </gradient:SfGradientView>
+                      <Label TextColor="White" HorizontalTextAlignment="Center" Padding="-230,10,10,0" Text="Time" FontAttributes="Bold"></Label>
+                    <Label TextColor="White" x:Name="txtTimer" HorizontalTextAlignment="Center" Padding="-230,40,10,0" Text="00:00" FontAttributes="Bold"></Label>
+                    <Label TextColor="White" HorizontalTextAlignment="Center" Padding="0,10,10,0" Text="Distance" FontAttributes="Bold"></Label>
+                    <Label TextColor="White" x:Name="distance" HorizontalTextAlignment="Center" Padding="0,40,10,0" Text="0km" FontAttributes="Bold"></Label>
+                    <Label TextColor="White" HorizontalTextAlignment="Center" Padding="230,10,10,0" Text="Activity" FontAttributes="Bold"></Label>
+                    <Label TextColor="White" x:Name="labelAct" HorizontalTextAlignment="Center" Padding="230,40,10,0" Text="Run" FontAttributes="Bold"></Label>
+                     <buttons:SfButton BackgroundColor="Red" Text="End" x:Name="endActivity" Margin="0,100,10,0" Clicked="EndActivity" CornerRadius="10" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="20" WidthRequest="55" HeightRequest="50" FontAttributes="Bold"/>
+                </Grid>
+              
+                
+            </StackLayout>
+        </Grid>
+    </sfPopup:SfPopupLayout.Content>
+  </sfPopup:SfPopupLayout>
+        </ContentPage.Content>
+</ContentPage>

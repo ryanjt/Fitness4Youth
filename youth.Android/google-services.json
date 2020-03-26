@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "102018691889",
+    "firebase_url": "https://youth-c693b.firebaseio.com",
+    "project_id": "youth-c693b",
+    "storage_bucket": "youth-c693b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:102018691889:android:8d603fb23b03ee65ea3610",
+        "android_client_info": {
+          "package_name": "com.ryanjt.youth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "102018691889-0b2lnj594ltb441ev7kov9bb63t2k1t0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCS_3gUFaWrAEPpmfqZSiJFg7ZkHamT8X4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "102018691889-0b2lnj594ltb441ev7kov9bb63t2k1t0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "102018691889-kiflc9o7rv0bs1qd12geatv61cn9evgi.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ryanjt.youth"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:gradient ="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms" x:Class="youth.MyGraphs">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <chart:ChartColorCollection x:Key="Colors">
+                <Color>#E02F2C</Color>
+                <Color>#2C68E0</Color>
+                <Color>#2CE056</Color>
+                <Color>#E09E2C</Color>
+                <Color>#12160F</Color>
+                <Color>#2CCBE0</Color>
+                <Color>#E02C83</Color>
+
+                
+            </chart:ChartColorCollection>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <ContentPage.Content>
+        <Grid>
+             <gradient:SfGradientView>
+        <gradient:SfGradientView.BackgroundBrush>           
+            <gradient:SfLinearGradientBrush>                
+                <gradient:SfLinearGradientBrush.GradientStops>
+                    <gradient:SfGradientStop x:Name="TopGradient" Color="#0048b9" Offset="0.0" />
+                    <gradient:SfGradientStop x:Name="BotGradient" Color="#00a8e8" Offset="1.0" />
+
+                </gradient:SfLinearGradientBrush.GradientStops>                
+            </gradient:SfLinearGradientBrush>            
+        </gradient:SfGradientView.BackgroundBrush>
+    </gradient:SfGradientView>
+             <ScrollView Orientation="Vertical">
+
+            <StackLayout>
+               
+                <chart:SfChart HeightRequest="400">
+                    
+                    <chart:SfChart.Legend>
+
+                        <chart:ChartLegend>
+                            <chart:ChartLegend.Title>
+                                <chart:ChartTitle Text="Total Activities" TextColor="White" FontSize="20" FontAttributes="Bold"></chart:ChartTitle>
+                            </chart:ChartLegend.Title>
+                            <chart:ChartLegend.LabelStyle>
+                                <chart:ChartLegendLabelStyle TextColor="White" FontAttributes="Bold" FontSize="10"></chart:ChartLegendLabelStyle>
+                            </chart:ChartLegend.LabelStyle>
+                        </chart:ChartLegend>
+                    </chart:SfChart.Legend>
+                  <chart:DoughnutSeries x:Name="Chart" XBindingPath="Act" YBindingPath="Total" CircularCoefficient="0.8" TrackColor="White" IsStackedDoughnut="True" CapStyle="BothCurve" Spacing="0.4" MaximumValue="30">
+                    <chart:DoughnutSeries.ColorModel>
+                        <chart:ChartColorModel Palette="Custom" CustomBrushes="{StaticResource Colors}"></chart:ChartColorModel>
+                    </chart:DoughnutSeries.ColorModel>
+                  </chart:DoughnutSeries>
+                    
+                    
+	              
+                    </chart:SfChart>
+                  
+                <chart:SfChart HeightRequest="500" WidthRequest="200">
+                      <chart:SfChart.Legend>
+
+                        
+                  
+                        <chart:ChartLegend>
+                           
+                            <chart:ChartLegend.Title>
+                                <chart:ChartTitle Text="Monthly Activity" TextColor="White" FontSize="15" FontAttributes="Bold"></chart:ChartTitle>
+                            </chart:ChartLegend.Title>
+                              <chart:ChartLegend.LabelStyle>
+                                <chart:ChartLegendLabelStyle TextColor="White" FontAttributes="Bold" FontSize="20"></chart:ChartLegendLabelStyle>
+                            </chart:ChartLegend.LabelStyle>
+                        </chart:ChartLegend>
+                    </chart:SfChart.Legend>
+
+ 
+        <chart:SfChart.PrimaryAxis>
+            <chart:CategoryAxis/>
+        </chart:SfChart.PrimaryAxis>
+ 
+        <chart:SfChart.SecondaryAxis>
+            <chart:NumericalAxis/>
+        </chart:SfChart.SecondaryAxis>
+ 
+        <chart:PyramidSeries PyramidMode="Surface"  x:Name="Test"  XBindingPath="Act" YBindingPath="Total"/>
+        
+
+	             
+                    
+                </chart:SfChart>
+                
+
+               
+            </StackLayout>
+           
+
+        </ScrollView>
+        </Grid>
+       
+    </ContentPage.Content>
+</ContentPage>

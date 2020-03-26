@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TabbedPage NavigationPage.HasBackButton="False" SelectedTabColor="#0048b9" UnselectedTabColor="DarkGray" BarTextColor="White" BarBackgroundColor="#FDFFFC" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="youth.MainPage" xmlns:local="clr-namespace:youth" >
+    
+    
+    <local:Home></local:Home>
+    <local:Activity></local:Activity>
+    <local:Food></local:Food>
+    <local:Shop></local:Shop>
+    <local:Profile></local:Profile>
+    
+</TabbedPage>

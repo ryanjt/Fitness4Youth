@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage  BackgroundColor="#0048b9" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="youth.AddActivity">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+          <Label Text="Activities" TextColor="White" Font="Bold" FontSize="35" Grid.Row="0" Margin="10,0,0,0" Grid.Column="0"></Label>
+
+        <ScrollView  Orientation="Horizontal" Margin="0,50,0,0" Grid.Row="0" Grid.ColumnSpan="2">
+
+              <StackLayout>
+               
+        <!--<Entry x:Name="nameEntry" Placeholder="Activity"></Entry>-->
+                  <StackLayout Orientation="Horizontal" HeightRequest="100"  BackgroundColor="white">
+                  <ImageButton ClassId="run" Clicked="Activity_Clicked" Source="run.png" BorderColor="white" BorderWidth="1" WidthRequest="90" HeightRequest="90" HorizontalOptions="Center" VerticalOptions="Center"></ImageButton>
+                  <ImageButton ClassId="walk" Clicked="Activity_Clicked" Source="walk.png" BorderColor="white" BorderWidth="1" WidthRequest="90" HeightRequest="90" HorizontalOptions="Center" VerticalOptions="Center"></ImageButton>
+                  <ImageButton ClassId="cycle" Clicked="Activity_Clicked" Source="cycle.png" BorderColor="white" BorderWidth="1" WidthRequest="90" HeightRequest="90" HorizontalOptions="Center" VerticalOptions="Center"></ImageButton>
+                  <ImageButton ClassId="basketball" Clicked="Activity_Clicked" Source="basketball.png" BorderColor="white" BorderWidth="1" WidthRequest="90" HeightRequest="90" HorizontalOptions="Center" VerticalOptions="Center"></ImageButton>
+                  <ImageButton ClassId="soccer" Clicked="Activity_Clicked" Source="soccer.png" BorderColor="white" BorderWidth="1" WidthRequest="90" HeightRequest="90" HorizontalOptions="Center" VerticalOptions="Center"></ImageButton>
+                  <ImageButton ClassId="tennis" Clicked="Activity_Clicked" Source="tennis.png" BorderColor="white" BorderWidth="1" WidthRequest="90" HeightRequest="90" HorizontalOptions="Center" VerticalOptions="Center"></ImageButton>
+                  <ImageButton ClassId="swim" Clicked="Activity_Clicked" Source="swim.png" BorderColor="white" BorderWidth="1" WidthRequest="90" HeightRequest="90" HorizontalOptions="Center" VerticalOptions="Center"></ImageButton>
+                  </StackLayout>
+                  
+           
+                 
+       
+                 
+    </StackLayout>
+
+        </ScrollView>
+            
+            
+
+            <Label Font="Bold" TextColor="White" Text="Duration" FontSize="35" Grid.Row="0" Margin="10,150,0,0" Grid.Column="0"></Label>
+            <TimePicker Grid.Row="1" Margin="10,0,0,430" Grid.Column="0" x:Name="durationEntry"></TimePicker>
+            <Button Grid.Row="1" Grid.Column="0" Margin="0,-200,-190,0" BackgroundColor="#2EC4B6" TextColor="GhostWhite" CornerRadius="5" Font="Bold" WidthRequest="150" HeightRequest="80" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"  Text="Add Activity" x:Name="activityButton" Clicked="ActivityButton_Clicked"></Button>
+            
+        </Grid>
+
+    </ContentPage.Content>
+   
+</ContentPage>

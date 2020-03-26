@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage NavigationPage.HasBackButton="False" BackgroundColor="White" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:radialMenu="clr-namespace:Syncfusion.SfRadialMenu.XForms;assembly=Syncfusion.SfRadialMenu.XForms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="youth.Home" Title="" IconImageSource="home1@2x.png" >
+    
+        <ContentPage.Content>
+            <Grid Padding="0,40,0,0">
+                <ListView x:Name="testLV" SeparatorVisibility="None" HasUnevenRows="True" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}" Text="Delete" IsDestructive="True"></MenuItem>
+                            </ViewCell.ContextActions>
+                            <StackLayout>
+                                <Frame BackgroundColor="{Binding Color}" CornerRadius="10" HasShadow="False" Padding="20,0,20,0" Margin="20,5,20,5" HeightRequest="90" >
+                                
+                                <StackLayout Orientation="Horizontal">
+                                
+
+                             
+                                     <Image Source="{Binding Image}" HeightRequest="50" WidthRequest="50"></Image>
+       
+                                
+                                  <Label Text="{Binding Name}"  TextColor="White" FontSize="30" FontAttributes="Bold" ></Label>
+                                   
+                                    
+
+                                  
+                                </StackLayout>
+                                
+                            </Frame>
+                                  <Frame CornerRadius="0" HasShadow="False">
+                                        <Label Text="{Binding Duration}" Margin="0,-10,0,0" TextColor="Black" FontSize="20" FontAttributes="Bold" ></Label>
+                                    </Frame>
+                                <Frame CornerRadius="0" HasShadow="False" Padding="18,0,0,0">
+                                    <Label Text="{Binding DateUtc}" FontSize="10" FontAttributes="Bold" ></Label>
+                                </Frame>
+                            </StackLayout>
+                            
+                            
+                          
+                        </ViewCell>
+                       
+                        
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+                 <radialMenu:SfRadialMenu x:Name="radialMenu" 
+                             IsDragEnabled="true" 
+                             CenterButtonPlacement="Center"
+                             LayoutType="Custom" 
+                             VisibleSegmentsCount="8" 
+                             CenterButtonRadius="40"
+                             CenterButtonBackgroundColor="#0048b9" 
+                             RimColor="Transparent" 
+                             SelectionColor="Transparent"
+                             CenterButtonTextColor="White" 
+                             CenterButtonFontSize="25" 
+                             EnableRotation="True"
+                             RimRadius="150"
+                                          >
+        <radialMenu:SfRadialMenu.CenterButtonView>
+                <Grid HeightRequest="40" WidthRequest="40">
+                    <Label Text="+" FontSize="70" HorizontalTextAlignment="Center" Padding="0,0,0,10" VerticalTextAlignment="Center" TextColor="White"></Label>
+                  </Grid>
+                </radialMenu:SfRadialMenu.CenterButtonView>
+                <radialMenu:SfRadialMenu.Items>
+                    <radialMenu:SfRadialMenuItem SegmentIndex="0" ItemHeight="70" ItemWidth="80" Text="item 1" ItemTapped="NewActivity" >
+                        <radialMenu:SfRadialMenuItem.View>
+                            <Grid HeightRequest="55" WidthRequest="80">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="15"/>
+                                </Grid.RowDefinitions>
+                                    <Label Grid.Row="1" BackgroundColor="White" Padding="2" Text="New" TextColor="Blue" FontSize="15" FontAttributes="Bold"></Label>
+                            </Grid>
+                        </radialMenu:SfRadialMenuItem.View>
+                    </radialMenu:SfRadialMenuItem>
+                
+                </radialMenu:SfRadialMenu.Items>
+            </radialMenu:SfRadialMenu>
+            </Grid>
+            
+           
+        </ContentPage.Content>
+
+</ContentPage>
