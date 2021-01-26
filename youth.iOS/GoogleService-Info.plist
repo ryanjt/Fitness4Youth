@@ -17,7 +17,7 @@
 	<key>PROJECT_ID</key>
 	<string>youth-c693b</string>
 	<key>STORAGE_BUCKET</key>
-	<string>youth-c693b.appspot.com</string>
+	<string></string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:102018691889:ios:79e9f7bbff0b4fa7ea3610</string>
+	<string></string>
 	<key>DATABASE_URL</key>
-	<string>https://youth-c693b.firebaseio.com</string>
+	<string></string>
 </dict>
 </plist>
