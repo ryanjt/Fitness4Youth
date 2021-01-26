@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.ryanjt.youth">
 	<uses-sdk android:minSdkVersion="28" android:targetSdkVersion="28" />
 	<application android:label="youth.Android">
-		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyABKgKPjXVu9jKGwCreThJbjW0TihPSgt0" />
+		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="KEY" />
 		<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
 		<uses-library android:name="org.apache.http.legacy" android:required="false" />
 	</application>
